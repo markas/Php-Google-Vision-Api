@@ -80,6 +80,8 @@ class WordsStrategy implements StrategyInterface
                 ? $this->symbolsStrategy->hydrate($wordEntityInfo['symbols'])
                 : null;
 
+            if (!$textProperty) continue;
+
             $wordEntities[] = new Word(
                 $textProperty,
                 $boundingBox,
